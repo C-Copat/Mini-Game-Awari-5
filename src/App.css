@@ -1,0 +1,5 @@
+.game--div{
+    display:flex;
+    justify-content: center;
+    gap: 10%;
+}
