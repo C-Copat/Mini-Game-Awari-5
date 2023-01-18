@@ -2,6 +2,7 @@ import { useContext, createContext, useState, useEffect } from 'react';
 import './App.css';
 import Hero from './components/Hero'
 import Monster from './components/Monster';
+import { MonsterHpProvider } from './MonsterHpContext';
 
 
 
@@ -11,6 +12,8 @@ export default function App() {
   const [isDone,setIsDone] = useState(true) //newGame
   const [isNew,setIsNew] = useState(true) //newGame
 
+  console.log('render App')
+
 
   useEffect(() =>
       levelNumber >= 5 ? setIsDone(true) : undefined
@@ -19,6 +22,7 @@ export default function App() {
 
   return (
     <>
+    <MonsterHpProvider>
       {
       
       isNew ? (
@@ -59,6 +63,7 @@ export default function App() {
           >Restart Game</button>
         </>
       }
+      </MonsterHpProvider>
     </>
   );
 }

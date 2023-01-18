@@ -1,22 +1,16 @@
 import React, { useContext, useEffect } from "react"
-
+import { MonsterCurrentHpContext, MonsterMaxHpContext } from "../MonsterHpContext";
 
 
 export default function Monster(props) {
+    
 
     let level = props.level;
 
-    const [maxHp,setMaxHp] = React.useState(10)
-    const [currentHp,setCurrentHp] = React.useState(maxHp)
+    const [maxHp,setMaxHp] = useContext(MonsterMaxHpContext)
+    const [currentHp,setCurrentHp] = useContext(MonsterCurrentHpContext)
 
-    
-
-/*     useEffect(()=> {
-        (level == 1) ? setMaxHp(10) && setCurrentHp(10)
-        : (level == 2) ? setMaxHp(15) && setCurrentHp(15)
-        : (level === 3) ? setMaxHp(50) && setCurrentHp(50)
-        : setMaxHp(100)
-    },[level]) */
+    console.log('render Monster')
 
     useEffect(()=> {
         if  (level === 1) {

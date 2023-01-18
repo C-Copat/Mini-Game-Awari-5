@@ -1,5 +1,7 @@
 export default function CriticalFailure({setCurrentHp}) {
 
+    console.log('render Failure')
+
     return(
         <button onClick={()=>{
             setCurrentHp(
