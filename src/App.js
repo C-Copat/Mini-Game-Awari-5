@@ -1,9 +1,8 @@
-import { useContext, createContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import './App.css';
 import Hero from './components/Hero'
 import Monster from './components/Monster';
-import { MonsterHpProvider } from './MonsterHpContext';
-
+import { MonsterCurrentHpContext, MonsterMaxHpContext } from './MonsterHpContext';
 
 
 export default function App() {
@@ -20,51 +19,56 @@ export default function App() {
   , [levelNumber])
 
 
-  return (
-    <>
-    <MonsterHpProvider>
-      {
-      
-      isNew ? (
-        <>
-          <h1>Hello</h1>
-          <button 
-          onClick={() =>{
-            setIsNew(false);
-            setIsDone(false)
-            setLevelNumber(1)
-          }}
-          >Start Game</button>
-        </>
-      ) :
-      
-      !isDone ?(
-        <div className="game--div">
-          <Hero />
-          <Monster
-            level={levelNumber} 
-          />
-          <button 
-          onClick={()=>{setLevelNumber((prev)=> prev+1)
-            }}
-          >
-            Next Level</button>
+  const [maxHp,setMaxHp] = useContext(MonsterMaxHpContext)
+  const [currentHp,setCurrentHp] = useContext(MonsterCurrentHpContext)
 
+  useEffect(() =>
+  (currentHp <= 0 ? handleLevelUp(): undefined),
+   [currentHp]
+  
+  )
+
+  function handleStartGame() {
+    setIsNew(false);
+    setIsDone(false)
+    setLevelNumber(1)
+  }
+
+  function handleLevelUp() {
+    setLevelNumber((prev)=> prev+1)
+  }
+
+  function handleRestartGame(){
+    setIsDone((prev)=>!prev);
+    setLevelNumber(1)
+  }
+
+
+  return (
+    
+      <div className="game--div">
+          {  
+          isNew ? (
+            <>
+              <h1>Hello</h1>
+              <button onClick={handleStartGame}>Start Game</button>
+            </>
+          ) :
+          !isDone ?(
+            <>
+              <Hero />
+              <Monster level={levelNumber} />
+              <button onClick={handleLevelUp}> Next Level</button>
+            </>
+          ) :
+            <>
+              <h1>Congratulations!</h1>
+              <h2>You WON!</h2>
+              <button onClick={handleRestartGame}>Restart Game</button>
+            </>
+          }
         </div>
-      ) :
-        <>
-          <h1>Congratulations!</h1>
-          <h2>You WON!</h2>
-          <button 
-            onClick={() =>{
-              setIsDone((prev)=>!prev);
-              setLevelNumber(1)
-            }}
-          >Restart Game</button>
-        </>
-      }
-      </MonsterHpProvider>
-    </>
+
   );
 }
   

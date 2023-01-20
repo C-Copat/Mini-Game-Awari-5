@@ -1,14 +1,19 @@
 import React, { useContext, useEffect } from "react"
 import { MonsterCurrentHpContext, MonsterMaxHpContext } from "../MonsterHpContext";
+import { useName, useUpdateName } from "../MonsterHpContext";
+import './Monster.css'
 
-
-export default function Monster(props) {
-    
+export default function Monster(props) {   
 
     let level = props.level;
 
     const [maxHp,setMaxHp] = useContext(MonsterMaxHpContext)
     const [currentHp,setCurrentHp] = useContext(MonsterCurrentHpContext)
+
+    // Using context Custom Hooks
+
+    const monsterName = useName()
+    const setMonsterName = useUpdateName()
 
     console.log('render Monster')
 
@@ -32,6 +37,8 @@ export default function Monster(props) {
         <>
         <div className="monster--container">
             <h1>{`Monster level ${level}`} </h1>
+            <h2>{monsterName}</h2>
+            <button onClick={setMonsterName('Bob')}>Change Name</button>
             <div className="monster--hp--container">
                 <h2>Health Points (HP)</h2>
                 <p>{`${currentHp} / ${maxHp}`}</p>

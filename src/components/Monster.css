@@ -1,0 +1,5 @@
+.monster--container{
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 16px;
+}
