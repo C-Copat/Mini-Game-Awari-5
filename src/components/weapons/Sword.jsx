@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { MonsterCurrentHpContext } from "../../MonsterHpContext"
+import { MonsterCurrentHpContext } from "../context/MonsterHpContext"
 
 export default function Sword() {
 

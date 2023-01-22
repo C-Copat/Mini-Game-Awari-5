@@ -1,9 +1,9 @@
 import React from 'react'
 import Card from './Card'
-import CriticalFailure from './weapons/CriticalFailure'
-import Sword from './weapons/Sword'
-import Axe from './weapons/Axe'
-import Spell from './weapons/Spell'
+import CriticalFailure from '../weapons/CriticalFailure'
+import Sword from '../weapons/Sword'
+import Axe from '../weapons/Axe'
+import Spell from '../weapons/Spell'
 
 
 export default function Hero() {

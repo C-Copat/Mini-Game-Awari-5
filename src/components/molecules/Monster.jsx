@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
-import { MonsterCurrentHpContext, MonsterMaxHpContext } from "../MonsterHpContext";
-import { useName, useUpdateName } from "../MonsterHpContext";
+import { MonsterCurrentHpContext, MonsterMaxHpContext } from "../context/MonsterHpContext";
+import { useName, useUpdateName } from "../context/MonsterHpContext";
 import './Monster.css'
 
 export default function Monster(props) {   

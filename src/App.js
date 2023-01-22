@@ -1,8 +1,8 @@
 import { useContext, useState, useEffect } from 'react';
 import './App.css';
-import Hero from './components/Hero'
-import Monster from './components/Monster';
-import { MonsterCurrentHpContext, MonsterMaxHpContext } from './MonsterHpContext';
+import Hero from './components/molecules/Hero'
+import Monster from './components/molecules/Monster';
+import { MonsterCurrentHpContext, MonsterMaxHpContext } from './components/context/MonsterHpContext';
 
 
 export default function App() {
