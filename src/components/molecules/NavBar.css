@@ -1,0 +1,13 @@
+.navbar--container{
+    display: flex;
+    justify-content: space-between;
+    border: 8px solid black;
+    padding: 8px;
+}
+
+.links--container{
+    display: flex;
+    direction: row;
+    justify-content: center;
+    gap: 1rem
+}

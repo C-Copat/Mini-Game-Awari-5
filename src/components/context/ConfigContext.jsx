@@ -9,7 +9,6 @@ export function useDifficulty(){
 
 export function useSetDifficulty(value) {
     return useContext(SetConfigContext)
-
 }
 
 export default function ConfigProvider({children}) {

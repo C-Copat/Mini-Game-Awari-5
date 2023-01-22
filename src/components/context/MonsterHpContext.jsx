@@ -42,11 +42,8 @@ export function MonsterHpProvider ({ children }) {
                     </NameUpdateContext.Provider>
                 </MonsterCurrentHpContext.Provider>
             </MonsterMaxHpContext.Provider>
-
         </>
     )
-
-
 }
 
 /* This is a problematic implementation because it triggers re-render of all components that */

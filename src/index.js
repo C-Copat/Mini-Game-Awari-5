@@ -1,24 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from "react-router-dom";
 import './index.css';
-import App from './App';
-import Main from './Main';
+import Main from './Main'
 
-import { createBrowserRouter, RouterProvider     } from "react-router-dom";
 
 import { MonsterHpProvider } from './components/context/MonsterHpContext';
+import ConfigProvider from './components/context/ConfigContext';
 
-const router = createBrowserRouter([
+/* const router = createBrowserRouter([
   {
     path: "/",
     element: <div>Hello world!</div>,
   },
 ]);
-
+ */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+      <ConfigProvider>
+        <Main />
+      </ConfigProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
