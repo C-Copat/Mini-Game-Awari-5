@@ -8,20 +8,15 @@ import Main from './Main'
 import { MonsterHpProvider } from './components/context/MonsterHpContext';
 import ConfigProvider from './components/context/ConfigContext';
 
-/* const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Hello world!</div>,
-  },
-]);
- */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ConfigProvider>
-        <Main />
+        <MonsterHpProvider>
+          <Main />
+        </MonsterHpProvider>
       </ConfigProvider>
     </BrowserRouter>
   </React.StrictMode>

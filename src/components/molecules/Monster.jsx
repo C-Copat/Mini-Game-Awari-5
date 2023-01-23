@@ -1,48 +1,52 @@
-import React, { useContext, useEffect } from "react"
-import { MonsterCurrentHpContext, MonsterMaxHpContext } from "../context/MonsterHpContext";
-import { useName, useUpdateName } from "../context/MonsterHpContext";
+import React, { useEffect } from "react"
+import { useDifficulty } from "../context/ConfigContext";
+import { useCurrentHp, useMaxHp } from "../context/MonsterHpContext";
 import './Monster.css'
 
-export default function Monster(props) {   
+export default function Monster({children, levelNumber, setLevelNumber}) {   
 
-    let level = props.level;
+    const [maxHp,setMaxHp] = useMaxHp()
+    const [currentHp,setCurrentHp] = useCurrentHp()
 
-    const [maxHp,setMaxHp] = useContext(MonsterMaxHpContext)
-    const [currentHp,setCurrentHp] = useContext(MonsterCurrentHpContext)
+    const difficulty = useDifficulty()
 
     // Using context Custom Hooks
 
-    const monsterName = useName()
-    const setMonsterName = useUpdateName()
-
     console.log('render Monster')
 
+    useEffect(() =>
+    (currentHp <= 0 ? handleLevelUp(): undefined),
+    [currentHp]
+    )
+
     useEffect(()=> {
-        if  (level === 1) {
-            setMaxHp(10);
-            setCurrentHp(10);
-        } else if (level === 2) {
-            setMaxHp(15);
-            setCurrentHp(15);
-        } else if (level === 3) {
-            setMaxHp(20);
-            setCurrentHp(20);
+        if  (levelNumber === 1) {
+            setMaxHp(10*difficulty);
+            setCurrentHp(10*difficulty);
+        } else if (levelNumber === 2) {
+            setMaxHp(15*difficulty);
+            setCurrentHp(15*difficulty);
+        } else if (levelNumber === 3) {
+            setMaxHp(20*difficulty);
+            setCurrentHp(20*difficulty);
         } else {
-            setMaxHp(50);
-            setCurrentHp(50);
+            setMaxHp(50*difficulty);
+            setCurrentHp(50*difficulty);
         }
-    },[level])
+    },[levelNumber])
+
+    function handleLevelUp() {
+        setLevelNumber((prev)=> prev+1)
+    }
     
     return(
         <>
         <div className="monster--container">
-            <h1>{`Monster level ${level}`} </h1>
-            <h2>{monsterName}</h2>
-            <button onClick={setMonsterName('Bob')}>Change Name</button>
+            <h1>{`Monster level ${levelNumber}`} </h1>
             <div className="monster--hp--container">
                 <h2>Health Points (HP)</h2>
                 <p>{`${currentHp} / ${maxHp}`}</p>
-
+                {children}
             </div>
         </div>
         </>
