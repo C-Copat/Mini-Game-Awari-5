@@ -13,12 +13,12 @@ export default function Game() {
     const difficulty = useDifficulty()
     const [levelNumber, setLevelNumber] = useState(1);
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
 
     useEffect(() =>
-        levelNumber >= 5 ? navigate('/won') : undefined
+        levelNumber >= 5 ? navigate('/won') : undefined       // It can be also done by rendering <Navigate to="/won" />
         , [levelNumber])
-
+    
     return(
         <>
         <div className="game--container">

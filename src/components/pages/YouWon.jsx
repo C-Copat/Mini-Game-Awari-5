@@ -1,11 +1,23 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import './YouWon.css'
 
 export default function YouWon() {
 
-    function handleRestart(){
+    const navigate = useNavigate()
 
+    function handleRestart(){
+        // The idea was to actually restart states, but it's done by default
     }
+
+    // Redirects automatically to home after 5 secs
+
+    useEffect(() =>{
+        setTimeout( () => {
+            navigate("/")
+        },5000)
+    }, [])
+
     return (
     <>
     <div className="youwon--container">
