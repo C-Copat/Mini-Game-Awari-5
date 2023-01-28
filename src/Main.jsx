@@ -7,11 +7,10 @@ import Config from "./components/pages/Config";
 import Game from "./components/pages/Game";
 import Glossary from "./components/pages/Glossary/Glossary";
 import HomePage from "./components/pages/HomePage";
-import MonsterNotFound from "./components/pages/Glossary/MonsterNotFound";
 import NotFound from "./components/pages/NotFound";
 import YouWon from "./components/pages/YouWon";
 import ShowMonster from "./components/pages/Glossary/ShowMonster";
-import NewMonster from "./components/pages/Glossary/NewMonster";
+import RandomMonster from "./components/pages/Glossary/RandomMonster";
 
 export default function Main () {
 
@@ -26,8 +25,7 @@ export default function Main () {
         <Route path="/glossary" element={ <GlossaryHeader />}>
             <Route index element={<Glossary />} />
             <Route path=":id" element={<ShowMonster />} />
-            <Route path="new" element={<NewMonster />} />
-            <Route path="notfound" element={<MonsterNotFound />} />
+            <Route path="new" element={<RandomMonster />} />
         </Route>
         <Route path="*" element={ <NotFound />}/>
     </Routes>

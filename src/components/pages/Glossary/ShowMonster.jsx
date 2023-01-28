@@ -2,9 +2,9 @@ import { useParams } from "react-router"
 
 export default function ShowMonster() {
 
-    const { id } = useParams()
+    const { index } = useParams()
 
     return(
-        <h2>Monster {id}</h2>
+        <h2>Monster {index}</h2>
     )
 }

@@ -1,3 +1,4 @@
+import { clear } from "@testing-library/user-event/dist/clear";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import './YouWon.css'
@@ -12,11 +13,12 @@ export default function YouWon() {
 
     // Redirects automatically to home after 5 secs
 
-    useEffect(() =>{
+/*     useEffect(() =>{
         setTimeout( () => {
             navigate("/")
         },5000)
-    }, [])
+        return clearTimeout()
+    }, []) */
 
     return (
     <>

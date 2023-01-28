@@ -8,7 +8,7 @@ The requirements were:
 (2)
 
 ### Concepts used
-Here is a list of concepts used by it origin
+Here is a list of concepts used by their origin
 
 #### Vanilla React
 
@@ -33,7 +33,7 @@ Link / NavLink (with active usage)
 
 #### Data and APIs
 
-fetch + useEffect ('Monster Not Found' page)
+fetch + promise Handling + useEffect ('Monster Not Found' page)
 
 #### Git
 Branching

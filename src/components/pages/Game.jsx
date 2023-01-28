@@ -18,20 +18,23 @@ export default function Game() {
     useEffect(() =>
         levelNumber >= 5 ? navigate('/won') : undefined       // It can be also done by rendering <Navigate to="/won" />
         , [levelNumber])
-    
+
+
     return(
         <>
         <div className="game--container">
             <Card>
+                <Monster 
+                    levelNumber={levelNumber} 
+                    setLevelNumber={setLevelNumber} />
+            </Card>
+            <Card>
                 <Hero>
+                    <GenericWeapon name="Spell" damage={15} />
                     <GenericWeapon name="Axe"damage={5} />
                     <GenericWeapon name="Sword" damage={10} />
-                    <GenericWeapon name="Spell" damage={15} />
                 </Hero>
             </Card>
-            <Monster 
-                levelNumber={levelNumber} 
-                setLevelNumber={setLevelNumber} />
         </div>
         </>
     )
