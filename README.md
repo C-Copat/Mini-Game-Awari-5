@@ -1,14 +1,26 @@
-# Awari - Exercício 5 - Mini Jogo
+# Awari's React Course - Exercise 5 - Mini Game
 
 ## Objective
-I was given the task to
-The requirements were:
+I was given the task to code a mini game, in which a hero should fight a certain amount of monsters. Some other requirements includes:
 
-(1)
-(2)
+* The monsters should have a certain amount of Health Points (HP). It should also increase as the levels increment;
+* The hero would have three attacks (Axe, Sword and Spell) which should decrease monster's hp by 5, 10 and 15 HP respectively;
+* ...
+
+There was also some technical requirements like:
+
+* Using React-Router to navigate between object pages;
+* Using context to store some data;
+* Fetching data from an API and using it on your monsters;
+* ...
+
+
+Additionally I gave myself the following task:
+
+Use the [D&D API](https://www.dnd5eapi.co/docs/#get-/api/monsters) to fetch data from specific monsters and display it in a glossary-like page (still under construction)
 
 ### Concepts used
-Here is a list of concepts used by their origin
+Here is a list of concepts that I learned and used during this exercise
 
 #### Vanilla React
 

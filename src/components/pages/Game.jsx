@@ -30,9 +30,9 @@ export default function Game() {
             </Card>
             <Card>
                 <Hero>
-                    <GenericWeapon name="Spell" damage={15} />
                     <GenericWeapon name="Axe"damage={5} />
                     <GenericWeapon name="Sword" damage={10} />
+                    <GenericWeapon name="Spell" damage={15} />
                 </Hero>
             </Card>
         </div>
