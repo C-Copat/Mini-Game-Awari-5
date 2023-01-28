@@ -19,6 +19,8 @@ Additionally I gave myself the following task:
 
 Use the [D&D API](https://www.dnd5eapi.co/docs/#get-/api/monsters) to fetch data from specific monsters and display it in a glossary-like page (still under construction)
 
+![image](https://user-images.githubusercontent.com/44590561/215243331-fa6a7c45-f30e-4bef-88cc-413b2d7aeba3.png)
+
 ### Concepts used
 Here is a list of concepts that I learned and used during this exercise
 
