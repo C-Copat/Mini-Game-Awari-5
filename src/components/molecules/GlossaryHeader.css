@@ -1,0 +1,19 @@
+.glossary--header--container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 0.5px dotted black;
+}
+
+.glossary--active{
+    font-weight: bold;
+    color: blue;
+}
+
+/* Used by NavLink, which already sets the classname="active (...)" for every active componente */
+
+.active{
+    font-weight: bold;
+    color: blue;
+}
