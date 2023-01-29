@@ -8,13 +8,12 @@ export default function Hero({ children }) {
     
     return(
         <div className="hero--container">
-            <h1>Your Hero</h1>
-            <div className="hero--hp--container">
+{/*             <div className="hero--hp--container">
                 <h2>Health Points (HP)</h2>
                 <p>{`${currentHp} / ${maxHp}`}</p>
-            </div>
-            <h4>Attacks</h4>
-            <div className="hero--container">
+            </div> */}
+            <h4>Your Attacks</h4>
+            <div className="attack--container">
                 {children}
             </div>
                            

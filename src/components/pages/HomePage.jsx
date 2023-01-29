@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
+import CustomButton from "../atom/CustomButton";
 import './HomePage.css'
 
 export default function HomePage() {
 
-    function handleStartGame(){
+    const navigate = useNavigate()
 
+    function handleStartGame(){
+        navigate('/game')
     }
 
     return (
@@ -12,9 +15,13 @@ export default function HomePage() {
     <div className="homepage--container">
         <h1>New Game Page</h1>
         <p>Click on the button below to start the game from level 1</p>
-        <button onClick={handleStartGame}>
-            <Link to="/game">Start Game</Link>
-        </button>
+        <br />
+        <CustomButton 
+            style="button--primary"
+            label="Start Game"
+            clickFunction={handleStartGame}
+        >
+        </CustomButton>
     </div>
     </>
     

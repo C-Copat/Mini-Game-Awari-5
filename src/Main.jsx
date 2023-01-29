@@ -24,7 +24,7 @@ export default function Main () {
         <Route path="/won" element={ <YouWon />}/>
         <Route path="/glossary" element={ <GlossaryHeader />}>
             <Route index element={<Glossary />} />
-            <Route path=":id" element={<ShowMonster />} />
+            <Route path=":index" element={<ShowMonster />} />
             <Route path="new" element={<RandomMonster />} />
         </Route>
         <Route path="*" element={ <NotFound />}/>

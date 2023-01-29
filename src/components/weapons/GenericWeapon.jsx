@@ -1,3 +1,4 @@
+import CustomButton from "../atom/CustomButton"
 import { useCurrentHp } from "../context/MonsterHpContext"
 
 export default function GenericWeapon({name,damage}) {
@@ -13,6 +14,12 @@ export default function GenericWeapon({name,damage}) {
     }
 
     return(
-        <button onClick={handleDamage}>{name ? name : 'Not Defined'}</button>
+        <>
+            <CustomButton
+                clickFunction={handleDamage}
+                label={name ? name : 'Not Defined'}
+                style={'button--primary'}
+            />
+            </>
     )
 }

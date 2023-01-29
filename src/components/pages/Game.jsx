@@ -29,11 +29,13 @@ export default function Game() {
                     setLevelNumber={setLevelNumber} />
             </Card>
             <Card>
-                <Hero>
-                    <GenericWeapon name="Axe"damage={5} />
-                    <GenericWeapon name="Sword" damage={10} />
-                    <GenericWeapon name="Spell" damage={15} />
-                </Hero>
+                <h4>Your attacks</h4>
+                <div className="attack--container">
+                    <GenericWeapon name="Axe (5)"damage={5} />
+                    <GenericWeapon name="Sword (10)" damage={10} />
+                    <GenericWeapon name="Spell (15)" damage={15} />
+                </div>
+                
             </Card>
         </div>
         </>

@@ -10,6 +10,7 @@ export default function Monster({children, levelNumber, setLevelNumber}) {
     const difficulty = useDifficulty()
 
     const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(true)
     const [data,setData] = useState()
 
 
@@ -27,7 +28,7 @@ export default function Monster({children, levelNumber, setLevelNumber}) {
             .then(setData)
             .catch((error)=>{console.error(error)})
             .finally(setLoading(false))
-    },[])
+    },[levelNumber])
 
     useEffect(()=> {
         if  (levelNumber === 1) {

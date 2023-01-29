@@ -1,9 +1,8 @@
 .navbar--container{
     display: flex;
     justify-content: space-between;
-    border: 8px solid black;
-    padding: 8px;
-    margin: 16px;
+    background-color:#bbdefb;
+    padding: 1rem;
 }
 
 .links--container{

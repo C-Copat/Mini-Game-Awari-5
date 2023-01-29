@@ -1,0 +1,11 @@
+
+.navbaritem {
+    padding: 1rem;
+}
+
+.navbaritem--state-default {
+    background-color: yellow;
+}
+.navbaritem-state--active {
+    color: #283593;
+}

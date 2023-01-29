@@ -1,5 +1,6 @@
 
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import NavbarItem from '../atom/NavbarItem'
 import './NavBar.css'
 
 export default function NavBar() {
@@ -8,9 +9,13 @@ export default function NavBar() {
         <nav className="navbar--container">
             <h3>RPG-like Game</h3>
             <div className='links--container'>
-                <p><Link to="/">Home</Link></p>
-                <p><Link to ="/glossary">Glossary</Link></p>
-                <p><Link to="/config">Config</Link></p>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to ="/glossary">Glossary</NavLink>
+                <NavLink to="/config">Config</NavLink>
+                <NavbarItem 
+                    path="/glossary"
+                    text="Glossary New"
+                    />
             </div>
             
         </nav>
